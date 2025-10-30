@@ -9,12 +9,12 @@ A scalable hierarchical ensemble clustering framework that combines **BIRCH** (B
 
 ## Key Features
 
-- ** Hierarchical Ensemble Architecture**: Multiple BIRCH configurations with varying threshold parameters
-- ** Deep Autoencoder Feature Learning**: Non-linear dimensionality reduction for high-dimensional behavioral features
-- ** Advanced Consensus Strategies**: Four ensemble methods (MV, WV, AASC, BOHC/CSPA)
-- ** Dynamic Model Selection**: Automatic strategy selection using multi-criteria evaluation
-- ** Memory Efficient**: Leverages BIRCH's CF Tree structure for processing millions of users
-- ** Incremental Learning**: Supports streaming data with real-time segment updates
+- **Hierarchical Ensemble Architecture**: Multiple BIRCH configurations with varying threshold parameters
+- **Deep Autoencoder Feature Learning**: Non-linear dimensionality reduction for high-dimensional behavioral features
+- **Advanced Consensus Strategies**: Four ensemble methods (MV, WV, AASC, BOHC/CSPA)
+- **Dynamic Model Selection**: Automatic strategy selection using multi-criteria evaluation
+- **Memory Efficient**: Leverages BIRCH's CF Tree structure for processing millions of users
+- **Incremental Learning**: Supports streaming data with real-time segment updates
 
 ## Overview
 
