@@ -305,7 +305,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Author**: Caiwen Li
 - **Institution**: Universiti Putra Malaysia
-- **Issues**: Please use the [GitHub issue tracker](https://github.com/yourusername/birch-ae/issues)
 
 ## Related Work
 
