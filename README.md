@@ -3,19 +3,20 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![TensorFlow 2.18+](https://img.shields.io/badge/TensorFlow-2.18+-orange.svg)](https://www.tensorflow.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Paper](https://img.shields.io/badge/Paper-IEEE%20Access-green.svg)](https://ieeexplore.ieee.org)
 
 A scalable hierarchical ensemble clustering framework that combines **BIRCH** (Balanced Iterative Reducing and Clustering using Hierarchies) with **deep autoencoder** feature learning for large-scale e-commerce user segmentation.
 
-## 🎯 Key Features
+## Key Features
 
-- **🌳 Hierarchical Ensemble Architecture**: Multiple BIRCH configurations with varying threshold parameters
-- **🧠 Deep Autoencoder Feature Learning**: Non-linear dimensionality reduction for high-dimensional behavioral features
-- **🤝 Advanced Consensus Strategies**: Four ensemble methods (MV, WV, AASC, BOHC/CSPA)
-- **📊 Dynamic Model Selection**: Automatic strategy selection using multi-criteria evaluation
-- **⚡ Memory Efficient**: Leverages BIRCH's CF Tree structure for processing millions of users
-- **🔄 Incremental Learning**: Supports streaming data with real-time segment updates
+- ** Hierarchical Ensemble Architecture**: Multiple BIRCH configurations with varying threshold parameters
+- ** Deep Autoencoder Feature Learning**: Non-linear dimensionality reduction for high-dimensional behavioral features
+- ** Advanced Consensus Strategies**: Four ensemble methods (MV, WV, AASC, BOHC/CSPA)
+- ** Dynamic Model Selection**: Automatic strategy selection using multi-criteria evaluation
+- ** Memory Efficient**: Leverages BIRCH's CF Tree structure for processing millions of users
+- ** Incremental Learning**: Supports streaming data with real-time segment updates
 
-## 📖 Overview
+## Overview
 
 BIRCH-AE addresses three critical challenges in e-commerce user segmentation:
 
@@ -33,54 +34,54 @@ BIRCH-AE addresses three critical challenges in e-commerce user segmentation:
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│              Data Preprocessing & Feature Engineering            │
+│              Data Preprocessing & Feature Engineering           │
 │    • Numeric: KNN Imputation + StandardScaler                   │
 │    • Categorical: Mode Imputation + OneHotEncoder               │
 └────────────────────────┬────────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│           Autoencoder Feature Learning (Optional)                │
-│    Architecture: 512 → 256 → 128 → Latent(14) → 128 → 256      │
+│           Autoencoder Feature Learning (Optional)               │
+│    Architecture: 512 → 256 → 128 → Latent(14) → 128 → 256       │
 │    • Handles correlated variables                               │
 │    • Non-linear dimensionality reduction                        │
 └────────────────────────┬────────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    BIRCH Ensemble Generation                     │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
-│  │ Fine-Grained │  │   Balanced   │  │Coarse-Grained│         │
-│  │   T = 0.3    │  │   T = 0.5    │  │   T = 0.8    │         │
-│  │   B = 50     │  │   B = 50     │  │   B = 50     │         │
-│  └──────────────┘  └──────────────┘  └──────────────┘         │
-│  Multiple cluster counts: K ∈ {5, 10, 15, 20}                  │
+│                    BIRCH Ensemble Generation                    │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │ Fine-Grained │  │   Balanced   │  │Coarse-Grained│           │
+│  │   T = 0.3    │  │   T = 0.5    │  │   T = 0.8    │           │
+│  │   B = 50     │  │   B = 50     │  │   B = 50     │           │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
+│  Multiple cluster counts: K ∈ {5, 10, 15, 20}                   │
 └────────────────────────┬────────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│              Ensemble Consensus Strategies                       │
-│  ┌──────────┐ ┌──────────┐ ┌──────┐ ┌────────────────┐        │
-│  │Majority  │ │Weighted  │ │ AASC │ │ BOHC (CSPA)    │        │
-│  │ Voting   │ │ Voting   │ │      │ │ Hierarchical   │        │
-│  └──────────┘ └──────────┘ └──────┘ └────────────────┘        │
+│              Ensemble Consensus Strategies                      │
+│  ┌──────────┐ ┌──────────┐ ┌──────┐ ┌────────────────┐          │
+│  │ Majority │ │ Weighted │ │ AASC │ │ BOHC (CSPA)    │          │
+│  │ Voting   │ │ Voting   │ │      │ │ Hierarchical   │          │
+│  └──────────┘ └──────────┘ └──────┘ └────────────────┘          │
 └────────────────────────┬────────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│            Dynamic Selection & Evaluation                        │
-│  Metrics: Silhouette | Calinski-Harabasz | Davies-Bouldin      │
+│            Dynamic Selection & Evaluation                       │
+│  Metrics: Silhouette | Calinski-Harabasz | Davies-Bouldin       │
 │  ➜ Automatically selects best ensemble strategy                 │
 └────────────────────────┬────────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                   Final User Segments                            │
-│            (Optimized for personalization)                       │
+│                   Final User Segments                           │
+│            (Optimized for personalization)                      │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -149,10 +150,10 @@ Final data shape: (50000, 14)
 ✓ BOHC_5: Silhouette=0.548
 ...
 
-📊 Ensemble Improvement: 23.4%
+Ensemble Improvement: 23.4%
 ```
 
-## 📊 Experimental Results
+## Experimental Results
 
 Performance on large-scale e-commerce datasets:
 
@@ -162,12 +163,12 @@ Performance on large-scale e-commerce datasets:
 | E-commerce 2019 | 4.1M | 38 | AASC | 0.521 | +19% |
 
 **Key Findings:**
-- 🎯 **23% average improvement** over single BIRCH models
-- ⚡ **Near-linear scalability** to millions of users
-- 🔄 **Robust performance** across multiple ensemble strategies
-- 📈 **Effective handling** of high-dimensional correlated features
+- **23% average improvement** over single BIRCH models
+- **Near-linear scalability** to millions of users
+- **Robust performance** across multiple ensemble strategies
+- **Effective handling** of high-dimensional correlated features
 
-## 🏗️ Architecture Details
+## Architecture Details
 
 ### BIRCH Ensemble Configuration
 
@@ -206,26 +207,6 @@ Coarse-Grained (T=0.8):
    - Preserves hierarchical structure information
    - Best performer in experiments (avg. Silhouette: 0.548)
 
-## 📁 Repository Structure
-
-```
-birch-ae/
-├── BIRCH_AE_Framework.ipynb    # Complete framework notebook
-├── requirements.txt             # Python dependencies
-├── README.md                    # This file
-├── LICENSE                      # MIT License
-├── examples/
-│   ├── basic_usage.py          # Simple usage example
-│   ├── large_scale.py          # Large dataset example
-│   └── streaming_data.py       # Incremental learning example
-├── data/
-│   └── sample_data.csv         # Sample e-commerce dataset
-└── docs/
-    ├── methodology.md          # Detailed methodology
-    ├── parameters.md           # Parameter tuning guide
-    └── api_reference.md        # API documentation
-```
-
 ## 🔧 Configuration
 
 ### Key Parameters
@@ -253,12 +234,12 @@ BIRCHAE(
 
 ### Performance Tips
 
-- 🚀 Use `reduction_method='pca'` for faster processing (linear method)
-- 💾 Set `sample_size` for datasets >100k users
-- 🔄 Enable incremental learning for streaming data
-- ⚡ Parallel processing of BIRCH ensemble members
+- Use `reduction_method='pca'` for faster processing (linear method)
+- Set `sample_size` for datasets >100k users
+- Enable incremental learning for streaming data
+- Parallel processing of BIRCH ensemble members
 
-## 📈 Use Cases
+## Use Cases
 
 ### E-Commerce Applications
 
@@ -285,7 +266,7 @@ new_users = load_new_user_data()
 updated_segments = birch_ae.update_segments(new_users)
 ```
 
-## 📝 Citation
+## Citation
 
 If you use BIRCH-AE in your research, please cite:
 
@@ -299,7 +280,7 @@ If you use BIRCH-AE in your research, please cite:
 }
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes:
 
@@ -309,24 +290,24 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Research conducted at Universiti Putra Malaysia (UPM)
 - Datasets: [Retail Rocket](https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset), [E-commerce Behavior 2019](https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store)
 - Built on scikit-learn's BIRCH implementation
 - Inspired by ensemble clustering research and deep learning advances
 
-## 📧 Contact
+## Contact
 
 - **Author**: Caiwen Li
 - **Institution**: Universiti Putra Malaysia
 - **Issues**: Please use the [GitHub issue tracker](https://github.com/yourusername/birch-ae/issues)
 
-## 🔗 Related Work
+## Related Work
 
 - [Extended Regularized K-Means for High-Dimensional Segmentation](https://ieeexplore.ieee.org/document/9893964) (IEEE Access 2022)
 - [Cluster-N-Engage: User Engagement Framework](https://ieeexplore.ieee.org/document/10171460) (IEEE Access 2023)
@@ -334,8 +315,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-⭐ **Star this repository** if you find it helpful!
+ **Star this repository** if you find it helpful!
 
-📖 **Read the full paper** for detailed methodology and experiments
+ **Read the full paper** for detailed methodology and experiments
 
-🐛 **Report issues** to help improve the framework
+ **Report issues** to help improve the framework
