@@ -3,7 +3,6 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![TensorFlow 2.18+](https://img.shields.io/badge/TensorFlow-2.18+-orange.svg)](https://www.tensorflow.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Paper](https://img.shields.io/badge/Paper-IEEE%20Access-green.svg)](https://ieeexplore.ieee.org)
 
 A scalable hierarchical ensemble clustering framework that combines **BIRCH** (Balanced Iterative Reducing and Clustering using Hierarchies) with **deep autoencoder** feature learning for large-scale e-commerce user segmentation.
 
@@ -87,8 +86,8 @@ BIRCH-AE addresses three critical challenges in e-commerce user segmentation:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/birch-ae.git
-cd birch-ae
+git clone https://github.com/lisali525/Birch-Autoencoder-Framework.git
+cd Birch-Autoencoder-Framework
 
 # Install dependencies
 pip install -r requirements.txt
